@@ -79,7 +79,7 @@ const Footer = () => {
           </a>
         </div>
         <div className="d-flex flex-column justify-content-center align-items-center my-4 my-md-0">
-          <img src="/images/logo.png" alt="Logo" className="logo" />
+          <img src="./images/logo.png" alt="Logo" className="logo" />
           <p className="text text-center pt-2">
             © 2022 PokerSharkSociety All Rights Reserved
           </p>

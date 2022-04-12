@@ -2,7 +2,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import HeroSection from "./Components/HeroSection/HeroSection";
-import Video from "./Components/Video/Video";
 import Join from "./Components/Join/Join";
 import PokerSharks from "./Components/PokerSharks/PokerSharsks";
 
@@ -12,29 +11,11 @@ import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import LaunchGivewayAndRoadMap from "./Components/LaunchGiveway/LaunchGivewayAndRoadMap";
 import { useEffect } from "react";
+import Count from './Components/Count/Count';
+import './Components/Count/count.css';
+import OwnerBenefits from "./Components/Benefits/OwnerBenefits";
+import Gallery from "./Components/Gallery/Gallery";
 function App() {
-  const launchGiveWays = [
-    {
-      title: "25% SOLD",
-      text1: "SHARK LOUNGE",
-      text2: "WSOP Main Event ",
-    },
-    {
-      title: "50% SOLD",
-      text1: "GTO TRAINING APP",
-      text2: "(1 Year DTO)",
-    },
-    {
-      title: "75% SOLD",
-      text1: "FREEROLL TOURNAMENT",
-      text2: "Vote 4 Location",
-    },
-    {
-      title: "100% SOLD",
-      text1: "3D SHARK AVATARS",
-      text2: "(Fully Rigged)",
-    },
-  ];
   const roadmap = [
     { title: "Q2 2022", text1: "3D SHARK EVOLUTION", text2: "Avatar Airdrop" },
     { title: "Q3 2022", text1: "SHARK LOUNGE", text2: "WSOP Main Event" },
@@ -56,23 +37,24 @@ function App() {
       easing: "ease",
     });
   });
+
   return (
+    
     <>
       <Header />
       <HeroSection />
-      <Video />
-      <Join />
       <PokerSharks />
-      <LaunchGivewayAndRoadMap
-        title="LAUNCH GIVEAWAYS"
-        data={[...launchGiveWays]}
-        id="launchmap"
-        img="./images/big_shark.png"
-      />
+      <Join />
+      <Count />
+      
+      <OwnerBenefits />
+      <Gallery />
+  
       <LaunchGivewayAndRoadMap
         title="PROJECT ROADMAP"
         data={[...roadmap]}
         id="projectmap"
+        img="./images/big_shark.png"
         img2="images/small_shark.svg"
         padding={true}
       />

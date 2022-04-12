@@ -1,14 +1,11 @@
-import React, { useState } from "react";
-import { Row, Col } from "react-bootstrap";
-import { Link } from "react-scroll";
+import React from "react";
+import { Row, Col, Navbar, Container, Nav } from "react-bootstrap";
+import "./Main.css";
 import {
-  BsCaretDownFill,
-  BsCaretUpFill,
   BsDiscord,
   BsTwitter,
   BsInstagram,
 } from "react-icons/bs";
-import { GiHamburgerMenu } from "react-icons/gi";
 
 import styled from "styled-components";
 const Wrapper = styled.div`
@@ -118,34 +115,6 @@ const Wrapper = styled.div`
   }
 `;
 const Header = () => {
-  const [menu, setMenu] = useState(false);
-  const overView = [
-    {
-      navItem: "Gallery",
-      to: "gallary",
-    },
-    {
-      navItem: "Launch Map",
-      to: "launchmap",
-    },
-    {
-      navItem: "Project Map",
-      to: "projectmap",
-    },
-    {
-      navItem: "Sharkpaper",
-      to: "sharkpaper",
-      sharkpaper: "true",
-    },
-    {
-      navItem: "Team",
-      to: "team",
-    },
-    {
-      navItem: "Faq",
-      to: "faq",
-    },
-  ];
   const socialArray = [
     {
       icon: <BsDiscord />,
@@ -167,71 +136,25 @@ const Header = () => {
   return (
     <Wrapper data-aos="fade-down">
       <Row className="align-items-center">
-        <Col xs={6} lg={3}>
+        <Col xs={6} lg={2}>
           <img src="./images/logo.png" alt="#" className="logo" />
         </Col>
-        <Col lg={3} className="d-none d-lg-flex ">
-          <button className="myButton">Connect Wallet</button>
-        </Col>
-        <Col xs={6} lg={3} className="d-flex justify-content-end">
-          <div
-            className="overview d-flex align-items-center"
-            onClick={() => setMenu((prev) => !prev)}
-          >
-            <span className="mx-2 d-none d-lg-flex">OVERVIEW</span>
-            {menu ? (
-              <BsCaretUpFill size="16" className=" d-none d-lg-flex" />
-            ) : (
-              <BsCaretDownFill size="16" className=" d-none d-lg-flex" />
-            )}
-            <GiHamburgerMenu className="d-lg-none" size={35} />
-            <div
-              className={`myDropdown d-flex flex-column justify-content-center align-items-center ${
-                menu && "anima"
-              }`}
-            >
-              {overView.map((el, i) => (
-                <div key={i}>
-                  {!el.sharkpaper && (
-                    <Link
-                      to={el.to}
-                      key={i}
-                      className="py-2 d-block navItem"
-                      spy={true}
-                      smooth={true}
-                      offset={50}
-                      duration={500}
-                      onClick={() => setMenu(false)}
-                    >
-                      {el.navItem}
-                    </Link>
-                  )}
-                  {el.sharkpaper && (
-                    <a
-                      href="https://pokersharksociety.com/static/media/SHARKPAPER.d1560f67.pdf"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {el.navItem}
-                    </a>
-                  )}
-                </div>
-              ))}
-              <div className="d-lg-none">
-                {socialArray.map((el, i) => (
-                  <a
-                    href={el.to}
-                    targer="_blank"
-                    rel="noreferrer"
-                    className="social"
-                    key={i}
-                  >
-                    {el.icon}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
+        <Col xs={6} lg={7} className="d-flex justify-content-center res-nav">
+          <Navbar collapseOnSelect expand="lg">
+            <Container>
+              <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+              <Navbar.Collapse id="responsive-navbar-nav">
+                <Nav className="me-auto">
+                  <Nav.Link href="#about">About</Nav.Link>
+                  <Nav.Link href="#gallery">Gallery</Nav.Link>
+                  <Nav.Link href="#events">Events</Nav.Link>
+                  <Nav.Link href="#projectmap">Roadmap</Nav.Link>
+                  <Nav.Link href="#team">Team</Nav.Link>
+                  <Nav.Link href="#faq">FAQ</Nav.Link>
+                </Nav>
+              </Navbar.Collapse>
+            </Container>
+          </Navbar>
         </Col>
         <Col lg={3} className="d-none d-lg-flex justify-content-end">
           <div>

@@ -8,15 +8,16 @@ const Wrapper = styled.div`
     font-style: italic;
     color: #fff;
     font-size: 3rem;
+    text-align:center;
   }
+
   .society {
     color: #03dafe;
   }
-  .text {
+  .text.subtitle {
     color: #fff;
-
-    font-size: 16px;
-    width: 400px;
+    text-align:center;
+    font-size: 22px;
   }
   .myButton {
     display: flex;
@@ -89,27 +90,21 @@ const Wrapper = styled.div`
 `;
 const HeroSection = () => {
   return (
-    <Wrapper className="py-5">
+    <Wrapper className="slider py-5">
       <Col xs={11} xxl={8} className="mx-auto">
         <Row className="align-items-center">
-          <Col md={6} data-aos="fade-right">
-            <img src="./images/hero.png" alt="" className="image" />
-          </Col>
           <Col
-            md={6}
+            md={12}
             className="d-flex justify-content-center mt-5 my-md-0"
             data-aos="fade-left"
           >
             <div className=" d-flex w-100 d-lg-block justify-content-center align-items-center align flex-column">
               <h2 className="title w-100">
-                POKER SHARK <br /> <span className="society">SOCIETY</span>
+              Welcome to the <span className="society">POKER SHARK SOCIETY</span>
               </h2>
-              <p className="text py-4">
-                The Poker Shark Society is a collection of 2,222 unique digital
-                art collectibles portraying poker sharks. Sharks grant owners
-                access to exciting live events and high-utility giveaways.
-              </p>
-              <div className="d-flex justify-content-center justify-content-md-start w-100 pt-3 pt-lg-5">
+              <p className="text subtitle py-4">THE NFT Project for Poker Players!</p>
+
+              {/* <div className="d-flex justify-content-center w-100 pt-3 pt-lg-5">
                 <button
                   href="#/"
                   className="myButton active"
@@ -126,7 +121,7 @@ const HeroSection = () => {
                 >
                   LEARN MORE
                 </a>
-              </div>
+              </div> */}
             </div>
           </Col>
         </Row>

@@ -7,8 +7,6 @@ import "slick-carousel/slick/slick-theme.css";
 const Wrapper = styled.div`
   position: relative;
   .main {
-    border: 1px solid var(--blue);
-    padding: 50px 15px;
     position: relative;
   }
   .main::before,
@@ -160,13 +158,10 @@ const PokerSharks = () => {
     ],
   };
   return (
-    <Wrapper className="py-5" id="gallary">
+    <Wrapper id="banner-slider">
       <img src="./images/small_shark.svg" alt="#" className="shark" />
       <Col xs={11} xxl={8} className="mx-auto pb-5">
         <div className="main">
-          <div className="title-container">
-            <h2 className="title"> POKER SHARKS </h2>
-          </div>
           <Slider {...settings}>
             {gallary.map((el, i) => (
               <div key={i}>

@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Row, Col } from "react-bootstrap";
+import { FaPlay } from "react-icons/fa";
 import styled from "styled-components";
 const Wrapper = styled.div`
+  .video-container {
+    position: relative;
+  }
+  .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  }
   .title {
     font-size: 3.75rem;
 
@@ -36,40 +47,40 @@ const Wrapper = styled.div`
   }
 `;
 const Join = () => {
+  const [play, setPlay] = useState(false);
   return (
-    <Wrapper className="py-5">
+    <Wrapper className="py-5" id="about">
       <Col xs={11} xxl={8} className="mx-auto">
-        <h2 className="title py-4 pb-3 pb-md-5">
-          JOIN THE SOCIETY<span className="exlamation">!</span>
-        </h2>
         <Row className="align-items-center">
-          <Col md={7} data-aos="fade-right">
-            <p className="text">
-              Being the proud owner of a poker shark makes you part of the Poker
-              Shark Society and comes with a wide range of benefits. Sharks will
-              evolve! - going from fun collectible to fully rigged 3D character
-              that you can use as your avatar in metaverses, supporting games,
-              and apps. Sharks will also be your gateway to life-enriching
-              experiences, crypto expert talks, elite poker coachings, training
-              materials, and tools. Check our roadmap and stalk our social media
-              for more. Our project is unique in that a whopping 80% of minting
-              revenue will go directly back into the project to fund your
-              benefits. The community reserve ensures the longevity of the
-              project. Read the “Sharkpaper” for details. If you want to gain
-              crypto insights, improve your poker game, and increase your mental
-              performance while being part of an engaging community, this is the
-              NFT for you !
-            </p>
-          </Col>{" "}
           <Col
             sm={10}
-            md={5}
+            md={6}
             className="d-flex justify-content-center align-items-center mt-5 mt-md-0 mx-auto"
             data-aos="fade-left"
           >
-            <div className="image-container">
-              <img src="./images/about.png" alt="" className="image" />
+            <div className="">
+              <Wrapper>
+                  <div className="w-100 video-container">
+                    <video width="100%" controls={play} preload="auto">
+                      <source src="./images/video.mp4" type="video/mp4" />
+                    </video>
+                    {!play && (
+                      <FaPlay
+                        color="#fff"
+                        size="30"
+                        onClick={() => {
+                          setPlay(true);
+                          document.querySelector("video").play();
+                        }}
+                        className="icon"
+                      />
+                    )}
+                  </div>
+              </Wrapper>
             </div>
+          </Col>
+          <Col md={6} data-aos="fade-left">
+            <p className="text">The Poker Shark Society is a collection of 2,222 unique Poker Sharks. These digital art collectibles are secured by the Ethereum blockchain as NFTs. Owners are granted access to exciting live events and giveaways.</p>
           </Col>
         </Row>
       </Col>
