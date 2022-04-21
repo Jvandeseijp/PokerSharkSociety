@@ -103,7 +103,7 @@ const HeroSection = () => {
               Welcome to the <span className="society">POKER SHARK SOCIETY</span>
               </h2>
               <p className="text subtitle py-4">THE NFT Project for Poker Players!</p>
-
+              <img src="./images/hero.png" alt="" className="image" />
               {/* <div className="d-flex justify-content-center w-100 pt-3 pt-lg-5">
                 <button
                   href="#/"

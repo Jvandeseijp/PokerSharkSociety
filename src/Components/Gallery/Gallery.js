@@ -77,6 +77,9 @@ const Wrapper = styled.div`
     left: -10%;
     mix-blend-mode: color-dodge;
   }
+  .gallery-img video {
+    border-radius: 15px;
+  }
   @media only screen and (max-width: 1399px) {
     .shark {
       width: 300px;
@@ -255,6 +258,7 @@ const Wrapper = styled.div`
     -o-transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
   }
+
 `;
 
 
@@ -304,46 +308,122 @@ const PokerSharks = () => {
           <div className=" d-flex w-100 d-lg-block justify-content-center align-items-center align flex-column">
             <h2 className="title py-4 pb-3 pb-md-5">GALLERY</h2>
           </div>
+          
           <div>
             <Slider {...settings}>
               <div className="gallery-img">
+                <video width="100%" height="100%" autoPlay muted loop>
+                  <source src="./images/1.mp4" type="video/mp4" />
+                  <source src="./images/1.webm" type="video/webm" />
+                  Your browser does not support HTML video.
+                </video>
+              </div>
+              <div className="gallery-img">
+                <video width="100%" height="100%" autoPlay muted loop>
+                  <source src="./images/2.mp4" type="video/mp4" />
+                  <source src="./images/2.webm" type="video/webm" />
+                  Your browser does not support HTML video.
+                </video>
+              </div>
+              <div className="gallery-img">
+                <video width="100%" height="100%" autoPlay muted loop>
+                  <source src="./images/3.mp4" type="video/mp4" />
+                  <source src="./images/3.webm" type="video/webm" />
+                  Your browser does not support HTML video.
+                </video>
+              </div>
+              <div className="gallery-img">
                 <a href="#img_1">
-                  <img src="./images/gallery-1.png" className="w-100" alt="#" />
+                  <img src="./images/gallery-1.jpg" className="w-100" alt="#" />
                 </a>
               </div>
               <div className="gallery-img">
                 <a href="#img_2">
-                  <img src="./images/gallery-2.png" className="w-100" alt="#" />
+                  <img src="./images/gallery-2.jpg" className="w-100" alt="#" />
                 </a>
               </div>
               <div className="gallery-img">
                 <a href="#img_3">
-                  <img src="./images/gallery-3.png" className="w-100" alt="#" />
+                  <img src="./images/gallery-3.jpg" className="w-100" alt="#" />
                 </a>
               </div>
               <div className="gallery-img">
                 <a href="#img_4">
-                  <img src="./images/gallery-1.png" className="w-100" alt="#" />
+                  <img src="./images/gallery-3a.jpg" className="w-100" alt="#" />
                 </a>
               </div>
               <div className="gallery-img">
                 <a href="#img_5">
-                  <img src="./images/gallery-2.png" className="w-100" alt="#" />
+                  <img src="./images/gallery-5.jpg" className="w-100" alt="#" />
                 </a>
               </div>
               <div className="gallery-img">
                 <a href="#img_6">
-                  <img src="./images/gallery-3.png" className="w-100" alt="#" />
+                  <img src="./images/gallery-6.jpg" className="w-100" alt="#" />
+                </a>
+              </div>
+              <div className="gallery-img">
+                <a href="#img_7">
+                  <img src="./images/gallery-7.jpg" className="w-100" alt="#" />
+                </a>
+              </div>
+              <div className="gallery-img">
+                <a href="#img_8">
+                  <img src="./images/gallery-8.jpg" className="w-100" alt="#" />
+                </a>
+              </div>
+              <div className="gallery-img">
+                <a href="#img_9">
+                  <img src="./images/gallery-9.jpg" className="w-100" alt="#" />
+                </a>
+              </div>
+              <div className="gallery-img">
+                <a href="#img_10">
+                  <img src="./images/gallery-10.jpg" className="w-100" alt="#" />
+                </a>
+              </div>
+              <div className="gallery-img">
+                <a href="#img_11">
+                  <img src="./images/gallery-11.jpg" className="w-100" alt="#" />
+                </a>
+              </div>
+              <div className="gallery-img">
+                <a href="#img_12">
+                  <img src="./images/gallery-12.jpg" className="w-100" alt="#" />
+                </a>
+              </div>
+              <div className="gallery-img">
+                <a href="#img_13">
+                  <img src="./images/gallery-13.jpg" className="w-100" alt="#" />
+                </a>
+              </div>
+              <div className="gallery-img">
+                <a href="#img_14">
+                  <img src="./images/gallery-14.jpg" className="w-100" alt="#" />
+                </a>
+              </div>
+              <div className="gallery-img">
+                <a href="#img_15">
+                  <img src="./images/gallery-15.jpg" className="w-100" alt="#" />
                 </a>
               </div>
             </Slider>
             
-            <a href="#_1" class="lightbox trans" id="img_1"><img src="./images/gallery-1.png" alt="#" /></a>
-            <a href="#_2" class="lightbox trans" id="img_2"><img src="./images/gallery-2.png" alt="#" /></a>
-            <a href="#_3" class="lightbox trans" id="img_3"><img src="./images/gallery-3.png" alt="#" /></a>
-            <a href="#_4" class="lightbox trans" id="img_4"><img src="./images/gallery-1.png" alt="#" /></a>
-            <a href="#_5" class="lightbox trans" id="img_5"><img src="./images/gallery-2.png" alt="#" /></a>
-            <a href="#_6" class="lightbox trans" id="img_6"><img src="./images/gallery-3.png" alt="#" /></a>
+            <a href="#_1" class="lightbox trans" id="img_1"><img src="./images/gallery-1.jpg" alt="#" /></a>
+            <a href="#_2" class="lightbox trans" id="img_2"><img src="./images/gallery-2.jpg" alt="#" /></a>
+            <a href="#_3" class="lightbox trans" id="img_3"><img src="./images/gallery-3.jpg" alt="#" /></a>
+            <a href="#_4" class="lightbox trans" id="img_4"><img src="./images/gallery-3a.jpg" alt="#" /></a>
+            <a href="#_5" class="lightbox trans" id="img_5"><img src="./images/gallery-5.jpg" alt="#" /></a>
+            <a href="#_6" class="lightbox trans" id="img_6"><img src="./images/gallery-6.jpg" alt="#" /></a>
+            <a href="#_7" class="lightbox trans" id="img_7"><img src="./images/gallery-7.jpg" alt="#" /></a>
+            <a href="#_8" class="lightbox trans" id="img_8"><img src="./images/gallery-8.jpg" alt="#" /></a>
+            <a href="#_9" class="lightbox trans" id="img_9"><img src="./images/gallery-9.jpg" alt="#" /></a>
+            <a href="#_10" class="lightbox trans" id="img_10"><img src="./images/gallery-10.jpg" alt="#" /></a>
+            <a href="#_11" class="lightbox trans" id="img_11"><img src="./images/gallery-11.jpg" alt="#" /></a>
+            <a href="#_12" class="lightbox trans" id="img_12"><img src="./images/gallery-12.jpg" alt="#" /></a>
+            <a href="#_13" class="lightbox trans" id="img_13"><img src="./images/gallery-13.jpg" alt="#" /></a>
+            <a href="#_14" class="lightbox trans" id="img_14"><img src="./images/gallery-14.jpg" alt="#" /></a>
+            <a href="#_15" class="lightbox trans" id="img_15"><img src="./images/gallery-15.jpg" alt="#" /></a>
           </div>
         </div>
       </Col>

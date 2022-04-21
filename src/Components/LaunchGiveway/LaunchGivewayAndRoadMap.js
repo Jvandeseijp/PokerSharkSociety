@@ -179,7 +179,43 @@ position:relative;
       }
 
   }
-  
+  .top-text {
+    margin-bottom: 12px !important;
+  }
+  .text-p {
+    font-weight: 300 !important;
+    line-height: inherit !important;
+    font-size: 16px !important;
+    margin-top: 1em;
+  }
+  .data-top-visible {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: translate(0, 38%);
+    transition: 0.3s;
+  }
+  .roadmap-data:hover .data-top-visible {
+    transform: translate(0, 0);
+  }
+  .data-hidden {
+    display: flex;
+    justify-content: center;
+  }
+  .roadmap-data .data-hidden span {
+    transition: 0.3s;
+  }
+  .roadmap-data .data-hidden {
+    opacity: 0;
+    transition: 0.3s;
+  }
+  .roadmap-data:hover .data-hidden {
+    opacity: 1;
+    transition: 0.3s;
+  }
+  .roadmap-data:hover .data-hidden span {
+    font-size: 16px !important;
+  }
 `;
 const LaunchGivewayAndRoadMap = ({ id, title, data, img, img2, padding }) => {
   return (
@@ -188,23 +224,25 @@ const LaunchGivewayAndRoadMap = ({ id, title, data, img, img2, padding }) => {
       <Col xs={11} xxl={8} className={`mx-auto  ${padding && "pb-5"}`}>
         <h2 className="title pb-5">
           {title}
-          <span className="exlamation">!</span>
+          <span className="exlamation">ACTIVATIONS</span>
         </h2>
         <Chrono mode="VERTICAL_ALTERNATING">
           {data.map((el, i) => (
             <div
               key={i}
-              className={`d-flex flex-column mt-0  ${
+              className={`d-flex roadmap-data flex-column mt-0  ${
                 i % 2 === 0 ? "main-container" : "main-container2"
               }`}
               data-aos={i % 2 === 0 ? "fade-right" : "fade-left"}
             >
-              <span className="timeline-title">{el.title}</span>
-              <p className="timeline-subtitle mt-1 mt-sm-2">{el.text1}</p>
-              {el.text3 && (
-                <span className="timeline-subtitle ">{el.text3}</span>
-              )}
-              <span className="timeline-subtitle ">{el.text2}</span>
+              <div className="data-top-visible">
+                <p className="timeline-subtitle top-text mt-1 mt-sm-2">{el.text1}</p>
+                <span className="timeline-title">{el.title}</span>
+                <span className="timeline-subtitle">{el.text2}</span>
+              </div>
+              <div className="data-hidden">
+                <span className="timeline-subtitle text-p">{el.text3}</span>
+              </div>
             </div>
           ))}
         </Chrono>
